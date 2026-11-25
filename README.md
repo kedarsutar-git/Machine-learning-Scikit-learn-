@@ -1,6 +1,8 @@
 # 30 Days of Scikit-learn 🚀
 
-A practical, production-oriented learning roadmap for building reliable machine-learning workflows with Scikit-learn.
+> From the Scikit-learn estimator API to a complete, production-oriented ML workflow in 30 days.
+
+---
 
 ## Introduction
 
@@ -8,7 +10,13 @@ A practical, production-oriented learning roadmap for building reliable machine-
 
 Over these 30 days, I will move from the estimator API and core algorithms to preprocessing, validation, model selection, and an end-to-end inference workflow. The goal is to understand both the algorithms and how to use Scikit-learn's API correctly, then apply that knowledge to complete ML pipelines.
 
-> **Learning commitment:** This repository is a tracker, not a claim of completed work. I will update the status and notes as I progress.
+**Learning rules**
+
+- Study the linked documentation for the day's topic, then write and run the examples.
+- Complete the mini task without copying a finished solution.
+- Keep preprocessing and model selection inside leakage-safe training workflows.
+- Record useful observations, limitations, and questions in that day's folder.
+- Mark a day complete only after finishing its practice and mini task.
 
 ## Learning Goals
 
@@ -39,6 +47,34 @@ All Scikit-learn references in this README point to the official documentation.
 4. [API Reference](https://scikit-learn.org/stable/modules/classes.html)
 5. [Examples](https://scikit-learn.org/stable/auto_examples/index.html)
 6. [Installation Guide](https://scikit-learn.org/stable/install.html)
+
+## Roadmap at a Glance
+
+| Phase | Days | Focus |
+|:---:|:---:|---|
+| 1 | 1–4 | Estimator API, data, regression, and regression metrics |
+| 2 | 5–11 | Core supervised classification algorithms |
+| 3 | 12–16 | Scaling, encoding, imputation, and composable preprocessing |
+| 4 | 17–21 | Classification evaluation, cross-validation, and tuning |
+| 5 | 22–26 | Regularization, clustering, dimensionality reduction, and anomalies |
+| 6 | 27–28 | Feature engineering, feature selection, and model persistence |
+| 7 | 29–30 | End-to-end project, revision, and portfolio |
+
+**Skill progression**
+
+```text
+Day 1  Estimator API
+  ↓
+Day 11 Core supervised models
+  ↓
+Day 16 Leakage-safe preprocessing pipelines
+  ↓
+Day 21 Evaluation and model selection
+  ↓
+Day 28 Persisted inference workflow
+  ↓
+Day 30 Portfolio-ready ML API
+```
 
 ## 30-Day Roadmap
 
@@ -815,6 +851,17 @@ Copy this template into each day's notes or notebook:
 ## Questions / next steps
 ```
 
+### Suggested Daily Study Pattern
+
+| Time | Activity |
+|---:|---|
+| 30 min | Read the linked concepts and API documentation |
+| 60 min | Code the examples and inspect the results |
+| 45 min | Complete the practice exercises or mini task |
+| 15 min | Record takeaways, issues, and follow-up questions |
+
+Adjust the time to fit the topic. The objective is a reproducible exercise and a clear explanation of what was learned—not a fixed number of study hours.
+
 ## Projects
 
 ### Project 1 — Breast Cancer Classification
@@ -886,7 +933,17 @@ Dataset
   → Prediction endpoint
 ```
 
-Keep the training code reproducible and the inference code explicit about the expected input schema. FastAPI is outside Scikit-learn's scope; this learning roadmap uses it as an application layer around the persisted Scikit-learn pipeline.
+**Architecture**
+
+```text
+Client
+  → FastAPI request validation
+  → Load the versioned, fitted preprocessing + model pipeline
+  → Predict
+  → Return a validated response
+```
+
+Keep the training code reproducible and the inference code explicit about the expected input schema. FastAPI is outside Scikit-learn's scope; this learning roadmap uses it as an application layer around the persisted Scikit-learn pipeline. Document how to run the API, the expected request fields, model/dependency versions, evaluation method, and known limitations.
 
 ## Important Scikit-learn Concepts
 
